@@ -1,5 +1,5 @@
 # Ecommerce
-
+An e-commerce website is an online shop where anyone can buy and sell products anytime, anywhere with just a click.
 
 
 # Technologies
