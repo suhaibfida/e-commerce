@@ -31,3 +31,5 @@ coverage/
 
 # Optional: Ignore compiled JS maps
 *.js.map
+# config
+config.ts

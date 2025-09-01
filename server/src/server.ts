@@ -1,12 +1,13 @@
 import app from "./app.js";
 import dotenv from "dotenv";
+import connectDatabase from "./config/db.js";
+import { PORT } from "./setting.js";
+// Load environment variables //error here in dotenv showing undefined
+dotenv.config();
+connectDatabase();
 
-// Load environment variables
-dotenv.config({ path: "./env" });
+const port = process.env.PORT;
 
-const port = process.env.PORT || 3000; // Add fallback port
-console.log("Port:", port);
-
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(port || PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
