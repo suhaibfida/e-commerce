@@ -27,7 +27,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
       message: "Enter valid id",
     });
   }
-  await product.remove(); // error here remove does not exist
+  await product.deleteOne();
   res.json({
     success: true,
     message: "product deleted successfully",
