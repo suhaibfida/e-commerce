@@ -11,6 +11,6 @@ const connectDatabase = () => {
     .catch((err) => {
       //why dont we need type here
       console.log(err);
-    });
+    }); //after handling error separately in in server file
 };
 export default connectDatabase;

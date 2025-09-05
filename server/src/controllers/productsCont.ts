@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import products from "../models/productModel.js";
+// import handleAsyncError from "../middleWares/handleAsyncError.js";
 //------------------------------------------For admin only--------------------------------------------------------
 export const createProduct = async (req: Request, res: Response) => {
   const product = await products.create(req.body);
