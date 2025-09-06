@@ -1,6 +1,10 @@
-// import type {Request,Response} from "express"
+import type { Request, Response, NextFunction } from "express";
 
-// const handleAsyncError(req:Request,res:Response,next:any)=>{
-//     Promise.resolve(handleAsyncError(req:Request,res:Response,next)).catch(next)
-// }
-// export default handleAsyncError;
+const handleAsyncError = (
+  fn: (req: Request, res: Response, next: NextFunction) => Promise<any>
+) => {
+  return (req: Request, res: Response, next: NextFunction) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+  };
+};
+export default handleAsyncError;
