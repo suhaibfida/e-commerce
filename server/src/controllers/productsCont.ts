@@ -15,8 +15,8 @@ export const createProduct = handleAsyncError(
 );
 export const updateProduct = handleAsyncError(
   async (req: Request, res: Response) => {
-    // const apiFeature = new ApiFeatures(product.find(), req.query).search
-    // let product = await products.query; //findById(req.params.id);
+    const apiFeature = new ApiFeatures(products.find(), req.query).search;
+    let product = await products.findById(req.params.id); //findById(req.params.id);
     if (!product) {
       return res.json({ message: "id is incorrect" });
     }
@@ -51,7 +51,7 @@ export const getAllProducts = handleAsyncError(
     }
     res.status(200).json({
       success: true,
-      product: { product },
+      product,
     });
   }
 );
