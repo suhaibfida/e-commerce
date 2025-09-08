@@ -15,7 +15,6 @@ export const createProduct = handleAsyncError(
 );
 export const updateProduct = handleAsyncError(
   async (req: Request, res: Response) => {
-    const apiFeature = new ApiFeatures(products.find(), req.query).search;
     let product = await products.findById(req.params.id); //findById(req.params.id);
     if (!product) {
       return res.json({ message: "id is incorrect" });
@@ -45,6 +44,9 @@ export const deleteProduct = handleAsyncError(
 // ----------------------------------------------USER------------------------------------------------------------
 export const getAllProducts = handleAsyncError(
   async (req: Request, res: Response) => {
+    // const apiFeature = new ApiFeatures(products.find(), req.query)
+    // .search()
+    // .filter();
     const product = await products.find();
     if (!product) {
       res.json({ message: "no products here" });
