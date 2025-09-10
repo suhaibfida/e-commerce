@@ -9,3 +9,4 @@ An e-commerce website is an online shop where anyone can buy and sell products a
 3. Bcrcypt for hashing.
 4. jwt for authorization.
 5. Zustand
+6. Elastic Search
